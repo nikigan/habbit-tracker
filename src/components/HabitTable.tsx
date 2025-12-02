@@ -153,7 +153,13 @@ export function HabitTable() {
   }, []);
 
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full h-screen flex flex-col" style={{
+      height: '100dvh',
+      paddingTop: 'env(safe-area-inset-top)',
+      paddingBottom: 'env(safe-area-inset-bottom)',
+      paddingLeft: 'env(safe-area-inset-left)',
+      paddingRight: 'env(safe-area-inset-right)'
+    }}>
       {/* Header */}
       <div className="flex-shrink-0 p-2 md:p-4 pb-2 md:pb-3">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
@@ -346,7 +352,11 @@ export function HabitTable() {
       {showScrollToToday && habits.length > 0 && (
         <Button
           onClick={scrollToToday}
-          className="fixed bottom-20 right-6 z-20 shadow-lg rounded-full h-12 px-4"
+          className="fixed z-20 shadow-lg rounded-full h-12 px-4"
+          style={{
+            bottom: 'calc(5rem + env(safe-area-inset-bottom))',
+            right: 'calc(1.5rem + env(safe-area-inset-right))'
+          }}
           size="sm"
           variant="default"
         >
